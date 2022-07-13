@@ -1,0 +1,15 @@
+C:\Users\popi\Desktop\3 SolBiblioDll -------------------\3b SolBiblioDll\EntidadesCOmpartidas\bin\Debug\EntidadesCOmpartidas.dll
+C:\Users\popi\Desktop\3 SolBiblioDll -------------------\3b SolBiblioDll\EntidadesCOmpartidas\bin\Debug\EntidadesCOmpartidas.pdb
+C:\Users\popi\Desktop\3 SolBiblioDll -------------------\3b SolBiblioDll\EntidadesCOmpartidas\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\popi\Desktop\3 SolBiblioDll -------------------\3b SolBiblioDll\EntidadesCOmpartidas\obj\Debug\EntidadesCOmpartidas.dll
+C:\Users\popi\Desktop\3 SolBiblioDll -------------------\3b SolBiblioDll\EntidadesCOmpartidas\obj\Debug\EntidadesCOmpartidas.pdb
+C:\Users\popi\Desktop\1 - Casos de EstudioASÇP\03 - SolBiblioteca\EntidadesCOmpartidas\bin\Debug\EntidadesCOmpartidas.dll
+C:\Users\popi\Desktop\1 - Casos de EstudioASÇP\03 - SolBiblioteca\EntidadesCOmpartidas\bin\Debug\EntidadesCOmpartidas.pdb
+C:\Users\popi\Desktop\1 - Casos de EstudioASÇP\03 - SolBiblioteca\EntidadesCOmpartidas\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\popi\Desktop\1 - Casos de EstudioASÇP\03 - SolBiblioteca\EntidadesCOmpartidas\obj\Debug\EntidadesCOmpartidas.dll
+C:\Users\popi\Desktop\1 - Casos de EstudioASÇP\03 - SolBiblioteca\EntidadesCOmpartidas\obj\Debug\EntidadesCOmpartidas.pdb
+C:\Users\popi\Desktop\1 - Casos de EstudioASÇP\03 - SolBibliotecaEsqueleto\EntidadesCOmpartidas\bin\Debug\EntidadesCOmpartidas.dll
+C:\Users\popi\Desktop\1 - Casos de EstudioASÇP\03 - SolBibliotecaEsqueleto\EntidadesCOmpartidas\bin\Debug\EntidadesCOmpartidas.pdb
+C:\Users\popi\Desktop\1 - Casos de EstudioASÇP\03 - SolBibliotecaEsqueleto\EntidadesCOmpartidas\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\popi\Desktop\1 - Casos de EstudioASÇP\03 - SolBibliotecaEsqueleto\EntidadesCOmpartidas\obj\Debug\EntidadesCOmpartidas.dll
+C:\Users\popi\Desktop\1 - Casos de EstudioASÇP\03 - SolBibliotecaEsqueleto\EntidadesCOmpartidas\obj\Debug\EntidadesCOmpartidas.pdb
