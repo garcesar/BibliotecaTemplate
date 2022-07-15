@@ -50,8 +50,5 @@ namespace Persistencia
                 oConexion.Close();
             }
         }
-
-
     }
-
 }
