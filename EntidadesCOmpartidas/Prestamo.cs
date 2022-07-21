@@ -84,7 +84,7 @@ namespace EntidadesCOmpartidas
         //operaciones
         public override string ToString()
         {
-            return "PRESATMO: Número: " + numero + " Fecha: " + fecha.ToShortDateString() + " Dias: " + dias + " Usuario: " + nombreUsuario + " Devuelta?: " + devuelto + " Publicación: " + pub.Titulo;
+            return "PRESATMO: Nï¿½mero: " + numero + " Fecha: " + fecha.ToShortDateString() + " Dias: " + dias + " Usuario: " + nombreUsuario + " Devuelta?: " + devuelto + " Publicaciï¿½n: " + pub.Titulo;
         }
     }
 

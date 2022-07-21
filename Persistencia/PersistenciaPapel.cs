@@ -78,5 +78,73 @@ namespace Persistencia
             }
             finally { oConexion.Close(); }
         }
+
+        public static Papel Buscar(int pIsbn)
+        {
+            int oIsbn, oPeso;
+            string oTitulo;
+
+            Papel p = null;
+            SqlDataReader oReader;
+
+            SqlConnection oConexion = new SqlConnection(Conexion.STR);
+            SqlCommand oComando = new SqlCommand("Exec BuscarPublicacionPapel " + pIsbn, oConexion);
+
+            try
+            {   
+                oConexion.Open();
+                oReader = oComando.ExecuteReader();
+
+                if(oReader.read())
+                {
+                    oIsbn = (int)oReader["Isbn"];
+                    oPeso = (int)oReader["Peso"];
+                    oTitulo = (string)oReader["Titulo"];
+                    p = new Papel(oIsbn, oTitulo, oPeso);
+                }
+                oReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Problemas con la base de datos:" + ex.Message);
+            }
+            finally { oConexion.Close();}
+            return p;
+        }
+
+        public static List<Publicacion> ListaPublicacionesPapel()
+        {
+            int oIsbn, oPeso;
+            string oTitulo;
+
+            Papel p;
+            List<Publicacion> oListaPublicaciones = new List<Publicacion>();
+            SqlDataReader o oReader;
+
+            SqlConnection oConexion = new SqlConnection(Conexion.STR);
+            SqlCommand oComando = new SqlCommand("Exec ListarPublicacionPapel ", oConexion);
+
+            try
+            {   
+                oConexion.Open();
+                oReader = oComando.ExecuteReader();
+
+                if(oReader.read())
+                {
+                    oIsbn = (int)oReader["Isbn"];
+                    oPeso = (int)oReader["Peso"];
+                    oTitulo = (string)oReader["Titulo"];
+                    p = new Papel(oIsbn, oTitulo, oPeso);
+                    oListaPublicaciones.Add(p);
+                }
+                oReader.Close();
+            }
+            catch (Exception ex)
+            {
+                throw new ApplicationException("Problemas con la base de datos:" + ex.Message);
+            }
+            finally { oConexion.Close();}
+            return p;
+        }
     }
 }
