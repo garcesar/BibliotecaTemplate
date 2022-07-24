@@ -24,7 +24,7 @@ namespace Persistencia
             oComando.Parameters.AddWithValue("@Nombre", pPrestamo.NombreUsuario);
             oComando.Parameters.AddWithValue("@Isbn", pPrestamo.Pub.ISBN);
 
-            SqlParameter response = new SqlParameter("@Retorno", SqlDbType.int);
+            SqlParameter response = new SqlParameter("@Retorno", SqlDbType.Int);
             response.Direction = ParameterDirection.ReturnValue;
             oComando.Parameters.Add(response);
 
@@ -33,7 +33,7 @@ namespace Persistencia
                 oConexion.Open();
                 oComando.ExecuteNonQuery();
 
-                if (Convert.ToInt32(response.value) == -1 )
+                if (Convert.ToInt32(response.Value) == -1 )
                     throw new Exception("La publicación no existe - No se presto");
             }
             catch (Exception ex)
@@ -41,7 +41,7 @@ namespace Persistencia
                 throw ex;
             }
             finally { oComando.Clone(); }
-            return Convert.ToInt32(response.value);
+            return Convert.ToInt32(response.Value);
         }
 
         public static Prestamo Buscar(int pNumero)
@@ -50,7 +50,7 @@ namespace Persistencia
             int oIsbn = 0, oDias = 0;
             DateTime oFecha = DateTime.Now;
             string oNombre = "";
-            bool oDevuelvo = true;
+            bool oDevuelto = true;
             
             Publicacion oPublicacion = null;
             Prestamo p = null;
@@ -65,17 +65,17 @@ namespace Persistencia
                 oReader = oComando.ExecuteReader();
 
                 //Viene un solo registro
-                if(oReader.read())
+                if(oReader.Read())
                 {
                     oFecha = (DateTime)oReader["Fecha"];
                     oDias = (int)oReader["Dias"];
                     oDevuelto = (bool)oReader["Devuelto"];
                     oNombre = (string)oReader["Nombre"];
-                    oISBN = (int)oReader["Isbn"];
+                    oIsbn = (int)oReader["Isbn"];
                     
-                    oPublicacion = PersistenciaPapel.Buscar(oISBN);
+                    oPublicacion = PersistenciaPapel.Buscar(oIsbn);
                     if (oPublicacion == null)
-                        oPublicacion = PersistenciaDigital.Buscar(oISBN);
+                        oPublicacion = PersistenciaDigital.Buscar(oIsbn);
                     
                     p = new Prestamo(pNumero, oFecha, oDias, oNombre, oDevuelto, oPublicacion);;
                 }
@@ -83,7 +83,7 @@ namespace Persistencia
             }
             catch (Exception ex)
             {
-                throw ex.Message;
+                throw ex;
             }
             finally { oConexion.Close();}
             return p;
@@ -109,7 +109,7 @@ namespace Persistencia
                 oConexion.Open();
                 oComando.ExecuteNonQuery();
 
-                if (Convert.ToInt32(response.value) == -1 )
+                if (Convert.ToInt32(response.Value) == -1 )
                     throw new Exception("No existe - No se devuelve");
             }
             catch (Exception ex)
@@ -123,6 +123,7 @@ namespace Persistencia
         public static List<Prestamo> ListarPrestamoNoDevueltos()
         {
             int oNumero, oDias, oISBN;
+            DateTime oFecha;
             Boolean oDevuelto;
             string oNombre;
 
@@ -145,15 +146,15 @@ namespace Persistencia
                     oFecha = (DateTime)oReader["Fecha"];
                     oDias = (int)oReader["Dias"];
                     oDevuelto = (bool)oReader["Devuelto"];
-                    oNombre = (string)oReader("Nombre");
-                    oIsbn = (int)oReader["Isbn"];
+                    oNombre = (string)oReader["Nombre"];
+                    oISBN = (int)oReader["Isbn"];
 
                     oPublicacion = PersistenciaPapel.Buscar(oISBN);
                     if (oPublicacion == null)
                         oPublicacion = PersistenciaDigital.Buscar(oISBN);
                     
                     p = new Prestamo(oNumero, oFecha, oDias, oNombre, oDevuelto, oPublicacion);
-                    oListaPublicaciones.Add(p);
+                    oListaPrestamo.Add(p);
                 }
                 oReader.Close();
             }
@@ -185,21 +186,21 @@ namespace Persistencia
                 oConexion.Open();
                 oReader = oComando.ExecuteReader();
 
-                while(oReader.Read())
+                while (oReader.Read())
                 {
                     oNumero = (int)oReader["Numero"];
                     oFecha = (DateTime)oReader["Fecha"];
                     oDias = (int)oReader["Dias"];
                     oDevuelto = (bool)oReader["Devuelto"];
-                    oNombre = (string)oReader("Nombre");
-                    oIsbn = (int)oReader["Isbn"];
+                    oNombre = (string)oReader["Nombre"];
+                    oISBN = (int)oReader["Isbn"];
 
                     oPublicacion = PersistenciaPapel.Buscar(oISBN);
                     if (oPublicacion == null)
                         oPublicacion = PersistenciaDigital.Buscar(oISBN);
                     
                     p = new Prestamo(oNumero, oFecha, oDias, oNombre, oDevuelto, oPublicacion);
-                    oListaPublicaciones.Add(p);
+                    oListaPrestamo.Add(p);
                 }
                 oReader.Close();
             }
@@ -237,15 +238,15 @@ namespace Persistencia
                     oFecha = (DateTime)oReader["Fecha"];
                     oDias = (int)oReader["Dias"];
                     oDevuelto = (bool)oReader["Devuelto"];
-                    oNombre = (string)oReader("Nombre");
-                    oIsbn = (int)oReader["Isbn"];
+                    oNombre = (string)oReader["Nombre"];
+                    oISBN = (int)oReader["Isbn"];
 
                     oPublicacion = PersistenciaPapel.Buscar(oISBN);
                     if (oPublicacion == null)
                         oPublicacion = PersistenciaDigital.Buscar(oISBN);
                     
                     p = new Prestamo(oNumero, oFecha, oDias, oNombre, oDevuelto, oPublicacion);
-                    oListaPublicaciones.Add(p);
+                    oListaPrestamo.Add(p);
                 }
                 oReader.Close();
             }
@@ -256,7 +257,5 @@ namespace Persistencia
             finally { oConexion.Close(); }
             return oListaPrestamo;
         }
-    }
-
-    
+    }   
 }

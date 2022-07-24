@@ -8,7 +8,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Presentacion", "Presentacion\", "{A84878C0-11C6-485A-90F6-03D65910914E}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		ProjectReferences = "{361F3EC9-9E75-453F-A450-695B66C80511}|EntidadesCOmpartidas.dll;"
+		ProjectReferences = "{361F3EC9-9E75-453F-A450-695B66C80511}|EntidadesCOmpartidas.dll;{ed4f236f-f7c8-4a56-82bc-81451be85257}|Logica.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/Presentacion"
 		Debug.AspNetCompiler.PhysicalPath = "Presentacion\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Presentacion\"
@@ -29,6 +29,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Presentacion", "Presentacio
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{14A5113D-D423-43C1-8462-C5A960950493}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{ED4F236F-F7C8-4A56-82BC-81451BE85257}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +76,18 @@ Global
 		{14A5113D-D423-43C1-8462-C5A960950493}.Release|Any CPU.Build.0 = Release|Any CPU
 		{14A5113D-D423-43C1-8462-C5A960950493}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{14A5113D-D423-43C1-8462-C5A960950493}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{ED4F236F-F7C8-4A56-82BC-81451BE85257}.Debug|.NET.ActiveCfg = Debug|Any CPU
+		{ED4F236F-F7C8-4A56-82BC-81451BE85257}.Debug|.NET.Build.0 = Debug|Any CPU
+		{ED4F236F-F7C8-4A56-82BC-81451BE85257}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED4F236F-F7C8-4A56-82BC-81451BE85257}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED4F236F-F7C8-4A56-82BC-81451BE85257}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{ED4F236F-F7C8-4A56-82BC-81451BE85257}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{ED4F236F-F7C8-4A56-82BC-81451BE85257}.Release|.NET.ActiveCfg = Release|Any CPU
+		{ED4F236F-F7C8-4A56-82BC-81451BE85257}.Release|.NET.Build.0 = Release|Any CPU
+		{ED4F236F-F7C8-4A56-82BC-81451BE85257}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED4F236F-F7C8-4A56-82BC-81451BE85257}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED4F236F-F7C8-4A56-82BC-81451BE85257}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{ED4F236F-F7C8-4A56-82BC-81451BE85257}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

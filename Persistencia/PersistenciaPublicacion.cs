@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace Persistencia
 {
-    class PersistenciaPublicacion
+    public class PersistenciaPublicacion
     {
         //Hay un solo eliminar en la bd, por lo cual generar una operacion en cada persistencia
         // de tipo publicacion, solo seria una duplicacion del codigo

@@ -10,7 +10,7 @@ using System.Configuration; // -> Para archivos de configuración como el archiv
 
 namespace Persistencia
 {
-    class PersistenciaPapel
+    public class PersistenciaPapel
     {
         public static void Agregar(Papel pPapel)
         {
@@ -95,7 +95,7 @@ namespace Persistencia
                 oConexion.Open();
                 oReader = oComando.ExecuteReader();
 
-                if(oReader.read())
+                if(oReader.Read())
                 {
                     oIsbn = (int)oReader["Isbn"];
                     oPeso = (int)oReader["Peso"];
@@ -119,7 +119,7 @@ namespace Persistencia
 
             Papel p;
             List<Publicacion> oListaPublicaciones = new List<Publicacion>();
-            SqlDataReader o oReader;
+            SqlDataReader oReader;
 
             SqlConnection oConexion = new SqlConnection(Conexion.STR);
             SqlCommand oComando = new SqlCommand("Exec ListarPublicacionPapel ", oConexion);
@@ -129,12 +129,11 @@ namespace Persistencia
                 oConexion.Open();
                 oReader = oComando.ExecuteReader();
 
-                if(oReader.read())
+                if(oReader.Read())
                 {
                     oIsbn = (int)oReader["Isbn"];
-                    oPeso = (int)oReader["Peso"];
                     oTitulo = (string)oReader["Titulo"];
-                    p = new Papel(oIsbn, oTitulo, oPeso);
+                    p = new Publicacion(oIsbn, oTitulo);
                     oListaPublicaciones.Add(p);
                 }
                 oReader.Close();
