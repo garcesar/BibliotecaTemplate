@@ -8,8 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-
-
+using Logica;
 using EntidadesCOmpartidas;
 
 
@@ -17,6 +16,17 @@ public partial class ListarPublicaciones : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       
+        try
+        {
+            List<Publicacion> oPublicaciones = LogicaPublicaciones.ListarPublicaciones();
+            for (int i = 0; i < oPublicaciones.Count; i++)
+            {
+                lstPublicaciones.Items.Add(oPublicaciones[i].ToString());
+            }
+        }
+        catch (Exception ex)
+        {
+            lblError.Text = ex.Message;
+        }
     }
 }
